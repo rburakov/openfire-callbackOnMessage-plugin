@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>plugins</artifactId>
+        <groupId>org.igniterealtime.openfire</groupId>
+        <version>4.3.0</version>
+    </parent>
+    <groupId>org.igniterealtime.openfire.plugins</groupId>
+    <artifactId>callbackOnMessage</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Callback on Message Plugin</name>
+    <description>Url is called when message has been sent</description>
+
+    <repositories>
+        <!-- Where we obtain dependencies. -->
+        <repository>
+            <id>igniterealtime</id>
+            <name>Ignite Realtime Repository</name>
+            <url>https://igniterealtime.org/archiva/repository/maven/</url>
+        </repository>
+    </repositories>
+
+    <developers>
+        <developer>
+            <name>Pavel Goski</name>
+        </developer>
+        <developer>
+            <name>Krzysztof Misztal</name>
+        </developer>
+        <developer>
+            <name>Ruslan Burakov</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <jersey.version>2.28</jersey.version>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <scope>runtime</scope>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+    </dependencies>
+</project>
